@@ -11,7 +11,9 @@ class NrelService
   private
 
   def get_json
-    conn.get
+    response = conn.get
+
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn

@@ -6,14 +6,14 @@ class NrelFacade
   end
 
   def stations
-    stations.map do |station|
-      binding.pry
+    all_stations.map do |station|
+      Station.new()
     end
   end
 
   private
 
-  def stations
+  def all_stations
     @_stations = service.stations
   end
 
