@@ -12,7 +12,7 @@ class NrelFacade
   private
 
   def service
-    NrelSerivce.new(@zip)
+    NrelService.new(@zip)
   end
 
 end
