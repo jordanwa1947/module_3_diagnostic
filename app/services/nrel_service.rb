@@ -17,8 +17,8 @@ class NrelService
   def conn
     Faraday.new(url: 'https://developer.nrel.gov/api/alt-fuel-stations/v1.json') do |faraday|
 
-      faraday.headers['api_key'] = ENV['NREL_KEY']
-      faraday.headers['format'] = 'JSON'
+      faraday.params['api_key'] = ENV['NREL_KEY']
+      faraday.params['format'] = 'JSON'
       faraday.adapter Faraday.default_adapter
     end
   end
