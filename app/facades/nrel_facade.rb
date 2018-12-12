@@ -6,10 +6,16 @@ class NrelFacade
   end
 
   def stations
-    stations = service.stations
+    stations.map do |station|
+      binding.pry
+    end
   end
 
   private
+
+  def stations
+    @_stations = service.stations
+  end
 
   def service
     NrelService.new(@zip)

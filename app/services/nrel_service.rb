@@ -11,7 +11,7 @@ class NrelService
   private
 
   def get_json
-    binding.pry
+    conn.get
   end
 
   def conn
@@ -19,6 +19,8 @@ class NrelService
 
       faraday.params['api_key'] = ENV['NREL_KEY']
       faraday.params['format'] = 'JSON'
+      faraday.params['fuel_type'] = "all"
+      faraday.params['zip'] = "#{@zip}"
       faraday.adapter Faraday.default_adapter
     end
   end
